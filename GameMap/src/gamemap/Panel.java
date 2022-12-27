@@ -10,7 +10,7 @@ import javax.swing.*;
 public class Panel extends JPanel {
 
     Panel() {
-        this.setPreferredSize(new Dimension(1000, 1000));
+        this.setPreferredSize(new Dimension(500, 500));
     }
 
     public void paint(Graphics g) {
@@ -37,14 +37,14 @@ public class Panel extends JPanel {
         }
         int x;
 
-        int[][] squares = {{0, 1, 0, 1}, {0, 1, 1, 1}, {1, 1, 1, 1}, {1, 0, 0, 1}, {1, 1, 0, 0},{0, 1, 1, 0}, {1, 1, 0, 0}};
-        int[][] map = new int[20][20];
+        int[][] squares = {{0, 1, 0, 1}, {0, 1, 1, 1}, {1, 1, 1, 1}, {1, 0, 0, 1}, {1, 1, 0, 0},{0, 1, 1, 0}, {0, 0, 1, 1}};
+        int[][] map = new int[10][10];
 
         Random random = new Random();
 
         int y;
-        for (int i = 0; i < 20; i++) {
-            for (int j = 0; j < 20; j++) {
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
                 if (i == 0 && j == 0) {
                     y = random.nextInt(7);
                     map[i][j] = y;
@@ -71,9 +71,9 @@ public class Panel extends JPanel {
         
 
         int k = 0;
-        for (int i = 0; i < 1000; i = i + 50) {
+        for (int i = 0; i < 500; i = i + 50) {
             int l = 0;
-            for (int j = 0; j < 1000; j = j + 50) {
+            for (int j = 0; j < 500; j = j + 50) {
                 
                 g.drawImage(image[map[l][k]], i, j, this);
                 l = l + 1;
